@@ -1,5 +1,8 @@
 package com.adcash.model.request;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name="ProductRequest")
 public class ProductRequest extends BaseRequest{
 
 	/* (non-Javadoc)

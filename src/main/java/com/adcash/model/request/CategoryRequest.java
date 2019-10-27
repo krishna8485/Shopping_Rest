@@ -1,5 +1,8 @@
 package com.adcash.model.request;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name="CategoryRequest")
 public class CategoryRequest extends BaseRequest {
 
 	/* (non-Javadoc)

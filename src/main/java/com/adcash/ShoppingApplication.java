@@ -7,7 +7,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Profile;
+import org.springframework.http.MediaType;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
 
 import com.adcash.entities.Category;
 import com.adcash.entities.Product;
@@ -44,4 +46,6 @@ public class ShoppingApplication {
             repository.save(c1);
         };
     }
+    
+   
 }

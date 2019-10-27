@@ -37,18 +37,6 @@ public class Category {
 			this.cname = cname;
 		}
 		
-		
-
-
-//		public Category(Long id, @NotEmpty(message = "Please provide a Category name") String cname,
-//				Set<Product> product) {
-//			super();
-//			this.id = id;
-//			this.cname = cname;
-//			this.product = product;
-//		}
-
-
 
 		public Category(Long id, @NotEmpty(message = "Please provide a Category name") String cname) {
 			super();
@@ -99,13 +87,5 @@ public class Category {
 		public void setProduct(Set<Product> product) {
 			this.product = product;
 		}
-//
-//		@Override
-//		public String toString() {
-//			return "Category [id=" + id + ", cname=" + cname + ", product=" + product + "]";
-//		}
-//
-//		
-		
 
 }

@@ -53,6 +53,8 @@ dependencies {
      //Enabling Caching
     compile("org.springframework.boot:spring-boot-starter-cache:${springBootVersion}")
     
+    compile("com.fasterxml.jackson.dataformat:jackson-dataformat-xml:+")
+    
     
     //Testing
     testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
