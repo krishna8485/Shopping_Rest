@@ -36,7 +36,7 @@ public class CategoryController {
     }
 
     
-    @PostMapping(value="/category", produces= {"application/json", "application/xml"})
+    @PostMapping(value="/category", produces= {"application/json", "application/xml"}, consumes= {"application/json", "application/xml"})
     ResponseEntity<CategoryResponse> createCategory(@Valid @RequestBody CategoryRequest categoryRequest) {
     	logger.info(categoryRequest.toString());
         CategoryResponse categoryResponse =  categoryBusinessImpl.save(categoryRequest);
@@ -52,7 +52,7 @@ public class CategoryController {
         return new ResponseEntity<>(categoryResponse, HttpStatus.OK);
     }
 
-    @PutMapping(value="/category/{categoryId}", produces= {"application/json", "application/xml"})
+    @PutMapping(value="/category/{categoryId}", produces= {"application/json", "application/xml"}, consumes= {"application/json", "application/xml"})
     ResponseEntity<CategoryResponse> updateCategory( @Valid @RequestBody CategoryRequest categoryRequest, @PathVariable @Min(1) Long categoryId) {
     	logger.info("categoryRequest --> "+ categoryRequest.toString() +"categoryId -->"+categoryId.toString());
         CategoryResponse categoryResponse =  categoryBusinessImpl.updateById(categoryRequest, categoryId);

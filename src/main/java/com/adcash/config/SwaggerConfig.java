@@ -18,17 +18,15 @@ import springfox.documentation.service.Parameter;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
-	
-	//TODO: Need to work on authorization part to work in swagger UI
         
     @Bean
     public Docket api() {
         ParameterBuilder aParameterBuilder = new ParameterBuilder();
         aParameterBuilder.name("Authorization")                 
-        				 .description("provide Authorization value as given user:password or admin:password")
+        				 .description("provide Authorization value as given for user access Basic dXNlcjpwYXNzd29yZA== and for admin access Basic YWRtaW46cGFzc3dvcmQ=")
                          .modelRef(new ModelRef("string"))
                          .parameterType("header")               
-                         .defaultValue("user:password")        // based64 
+                         .defaultValue("Basic YWRtaW46cGFzc3dvcmQ=")        // based64 
                          .required(true)                
                          .build();
         java.util.List<Parameter> aParameters = new ArrayList<>();

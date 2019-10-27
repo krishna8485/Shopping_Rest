@@ -43,7 +43,7 @@ public class ProductController {
 	    	return new ResponseEntity<>(productResponses, HttpStatus.OK);
 	    }
 
-	    @PostMapping(value="/category/{categoryId}/product" , produces= {"application/json", "application/xml"})
+	    @PostMapping(value="/category/{categoryId}/product" , produces= {"application/json", "application/xml"}, consumes= {"application/json", "application/xml"})
 	    public ResponseEntity<ProductResponse> createProduct(@PathVariable(value = "categoryId") @Min(1)Long categoryId,
 	        @Valid @RequestBody ProductRequest productRequest) throws ResourceNotFoundException {
 	    	logger.info("categoryId --> "+categoryId +"productRequest -->"+productRequest.toString());
@@ -52,7 +52,7 @@ public class ProductController {
 	    	return new ResponseEntity<>(productResponse, HttpStatus.CREATED);	        
 	    }
 
-	    @PutMapping(value="/category/{categoryId}/product/{productId}" , produces= {"application/json", "application/xml"})
+	    @PutMapping(value="/category/{categoryId}/product/{productId}" , produces= {"application/json", "application/xml"}, consumes= {"application/json", "application/xml"})
 	    public ResponseEntity<ProductResponse> updateProduct(@PathVariable(value = "categoryId") @Min(1) Long categoryId,
 	        @PathVariable(value = "productId")  @Min(1) Long productId, @Valid @RequestBody ProductRequest productRequest) throws ResourceNotFoundException {
 	    	logger.info("categoryId --> "+categoryId + "productId --> "+productId +"productRequest -->"+productRequest.toString());
