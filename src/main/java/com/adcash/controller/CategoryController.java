@@ -6,7 +6,6 @@ import com.adcash.exception.ResourceNotFoundException;
 import com.adcash.model.request.CategoryRequest;
 import com.adcash.model.response.CategoryResponse;
 import com.adcash.model.response.Success;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +27,7 @@ public class CategoryController {
 
     @Autowired @Qualifier("categoryBusinessImpl")
     private IBusiness categoryBusinessImpl;
-    
+   
     @GetMapping(value="/categories", produces= {"application/json", "application/xml"})
     ResponseEntity<List<CategoryResponse>> getAllCategory() throws ResourceNotFoundException{
     	List<CategoryResponse> categoryResponses = (List<CategoryResponse>)categoryBusinessImpl.findAll();
